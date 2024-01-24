@@ -1,0 +1,12 @@
+<%= simple_form_for([@restaurant, @review || @new_review], url: restaurant_reviews_path(@restaurant)) do |form| %>
+  <%= form.error_notification %>
+
+  <div class="form-inputs">
+    <%= form.input :content, label: 'Review Content' %>
+    <%= form.input :rating, label: 'Rating', collection: 1..5, prompt: 'Select a rating' %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.button :submit, 'Create Review' %>
+  </div>
+<% end %>
